@@ -39,6 +39,8 @@ win.config(bg='#CCFFCC')  # RGB
 
 ## Виджеты
 
+### Label
+
 `Label` - для отображения текстовой информации [lesson2.py](gui_project/lesson2.py)
 
 ```Python3
@@ -58,6 +60,7 @@ label_1 = tk.Label(win, text='Hello!',  # создаём Label
 label_1.pack()  # располагаем на экране
 ```
 
+### Button
 
 `Button` - кнопка [lesson3.py](gui_project/lesson3.py)
 
