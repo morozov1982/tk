@@ -6,7 +6,7 @@
 
 ## Главное окно
 
-Создаём и запускаем главное окно
+Создаём и запускаем главное окно [lesson1.py](gui_project/lesson1.py)
 
 ```Python3
 import tkinter as tk  # импортируем
@@ -39,7 +39,7 @@ win.config(bg='#CCFFCC')  # RGB
 
 ## Виджеты
 
-`Label` - для отображения текстовой информации
+`Label` - для отображения текстовой информации [lesson2.py](gui_project/lesson2.py)
 
 ```Python3
 label_1 = tk.Label(win, text='Hello!',  # создаём Label
@@ -56,4 +56,58 @@ label_1 = tk.Label(win, text='Hello!',  # создаём Label
                    justify=tk.CENTER  # выравнивание строк текста: LEFT, RIGHT, JUSTIFY
                    )
 label_1.pack()  # располагаем на экране
+```
+
+
+`Button` - кнопка [lesson3.py](gui_project/lesson3.py)
+
+```Python3
+def say_hello():
+    print('Hello!')
+
+btn = tk.Button(win, text='Say Hello',  # создаём кнопку
+                 # command=функция,  # действия кнопки
+                 command=say_hello,
+                 activebackground='lightblue',  # цвет при наведении и нажатии
+                 bg='lightgreen',
+                 state=tk.NORMAL  # состояние - DISABLED (выключена), по умолчанию - NORMAL (включена)
+                 )
+
+btn.pack()  # располагаем на экране
+```
+
+```Python3
+def add_label():
+    label = tk.Label(win, text='Label')
+    label.pack()
+
+btn = tk.Button(win, text='Add Label',
+                 command=add_label  # по нажатию создаётся метка
+                 )
+btn.pack()
+```
+
+Использование **lambda функций**:
+
+```Python3
+btn = tk.Button(win, text='Add Label (lambda)',
+                 command=lambda: tk.Label(win, text='lambda Label').pack()
+                 )
+btn.pack()
+```
+
+Использование **счётчика**:
+
+```Python3
+count = 0
+
+def counter():
+    global count
+    count += 1
+    btn4['text'] = f'Counter: {count}'
+
+btn = tk.Button(win, text=f'Counter: {count}',
+                 command=counter
+                 )
+btn.pack()
 ```
