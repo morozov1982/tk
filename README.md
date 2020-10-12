@@ -115,7 +115,7 @@ btn = tk.Button(win, text=f'Counter: {count}',
 btn.pack()
 ```
 
-## Метод grid
+## Метод grid()
 
 Помогает располагать виджеты в виде таблицы
 
