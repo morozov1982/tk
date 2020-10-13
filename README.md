@@ -115,9 +115,31 @@ btn = tk.Button(win, text=f'Counter: {count}',
 btn.pack()
 ```
 
+### Entry
+
+`Entry` - поле для ввода [lesson5.py](gui_project/lesson5.py)
+
+```Python3
+name = tk.Entry(win)  # поле для ввода
+name.grid(row=0, column=1)
+```
+
+Поле **для ввода пароля**:
+
+```Python3
+password = tk.Entry(win, show='*')  # show - скрывает вводимые символы
+password.grid(row=1, column=1)
+```
+
+```Python3
+value = name.get()  # берёт содержимое поля для ввода
+name.delete(0, tk.END)  # удаляет содержимое с 0 позиции по tk.END (конец строки, можно написать просто 'end')
+name.insert(0, 'Привет!')  # вставляет текст в 0 позицию
+```
+
 ## Метод grid()
 
-Помогает располагать виджеты в виде таблицы
+Помогает располагать виджеты в виде таблицы [lesson4.py](gui_project/lesson4.py)
 
 ```Python3
 btn1 = tk.Button(win, text='Hello 1')
@@ -148,7 +170,7 @@ win.grid_columnconfigure(0,  # настраивает 0 солонку
 win.grid_columnconfigure(1, minsize=150)
 ```
 
-Создаём сетку с использованием цикла for:
+Создаём сетку с использованием цикла for: [lesson4-for.py](gui_project/lesson4-for.py)
 
 ```Python3
 for i in range(5):  # 5 рядов
